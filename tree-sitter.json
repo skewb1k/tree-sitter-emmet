@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "emmet",
+      "camelcase": "Emmet",
+      "title": "Emmet",
+      "scope": "source.emmet",
+      "file-types": [
+        "emmet"
+      ],
+      "injection-regex": "^emmet$",
+      "class-name": "TreeSitterEmmet"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Emmet grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "skewb1k"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-emmet"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

@@ -1,0 +1,138 @@
+=============================
+Children
+=============================
+nav>ul>li
+---
+
+(snippet
+  (children
+    (children
+      (tag
+        (name))
+      (tag
+        (name)))
+    (tag
+      (name))))
+
+=============================
+Siblings
+=============================
+nav+ul+li
+---
+
+(snippet
+  (siblings
+    (siblings
+      (tag
+        (name))
+      (tag
+        (name)))
+    (tag
+      (name))))
+
+=============================
+Child siblings
+=============================
+div>ul+li
+---
+
+(snippet
+  (children
+    (tag
+      (name))
+    (siblings
+      (tag
+        (name))
+      (tag
+        (name)))))
+
+=============================
+Siblings children
+=============================
+div+ul>li
+---
+
+(snippet
+  (children
+    (siblings
+      (tag
+        (name))
+      (tag
+        (name)))
+    (tag
+      (name))))
+
+=============================
+Simple group
+=============================
+(header>a)+footer
+---
+
+(snippet
+  (siblings
+    (group
+      (children
+        (tag
+          (name))
+        (tag
+          (name))))
+    (tag
+      (name))))
+
+=============================
+Child group
+=============================
+div>(header>ul>li+nav>a)+footer>p
+---
+
+(snippet
+  (children
+    (children
+      (tag
+        (name))
+      (siblings
+        (group
+          (children
+            (children
+              (children
+                (tag
+                  (name))
+                (tag
+                  (name)))
+              (siblings
+                (tag
+                  (name))
+                (tag
+                  (name))))
+            (tag
+              (name))))
+        (tag
+          (name))))
+    (tag
+      (name))))
+
+=============================
+Multiplication
+=============================
+li*5
+---
+
+(snippet
+  (multiplication
+    (tag
+      (name))))
+
+=============================
+Nested multiplication
+=============================
+li*5>ul*3
+---
+
+(snippet
+  (children
+    (multiplication
+      (tag
+        (name)))
+    (multiplication
+      (tag
+        (name)))))

@@ -1,0 +1,48 @@
+{
+  "name": "tree-sitter-emmet",
+  "version": "0.1.0",
+  "description": "Emmet grammar for tree-sitter",
+  "repository": "https://github.com/skewb1k/tree-sitter-emmet",
+  "license": "MIT",
+  "author": {
+    "name": "skewb1k"
+  },
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.2",
+    "prebuildify": "^6.0.1",
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-cli": "^0.25.10"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js",
+    "generate": "tree-sitter generate",
+    "fmt": "biome check --write grammar.js"
+  }
+}
